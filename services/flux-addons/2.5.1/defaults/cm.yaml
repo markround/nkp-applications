@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: flux-add-ons-0.41.2-d2iq-defaults
+  name: flux-add-ons-2.5.1-mdr-defaults
   namespace: ${releaseNamespace}
 data:
   values.yaml: |
