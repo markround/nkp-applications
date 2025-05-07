@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: eck-3.0.0-mdr-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
