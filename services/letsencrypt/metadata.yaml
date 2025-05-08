@@ -1,11 +1,13 @@
 displayName: LetsEncrypt Issuers
 description: LetsEncrypt Acme ClusterIssuers
 category:
-- "MDR Personal"
+  - "MDR Personal"
 type: catalog
 allowMultipleInstances: false
 scope:
-- workspace
+  - workspace
+dependencies:
+  - ingress-nginx
 overview: |-
   ## Overview
   Custom LetsEncrypt ClusterIssuers, configured to work with the NGINX Ingress Controller
