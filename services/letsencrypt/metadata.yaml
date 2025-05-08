@@ -6,8 +6,6 @@ type: catalog
 allowMultipleInstances: false
 scope:
   - workspace
-dependencies:
-  - ingress-nginx
 overview: |-
   ## Overview
   Custom LetsEncrypt ClusterIssuers, configured to work with the NGINX Ingress Controller
