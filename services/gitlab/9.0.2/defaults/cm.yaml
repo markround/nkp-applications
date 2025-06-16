@@ -1,0 +1,38 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-9.0.2-mdr-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
+    global:
+      hosts:
+        domain: lab.markround.com
+      https: false
+      ingress:
+        configureCertmanager: false
+        tls:
+          enabled: false
+      ingress:
+        class: haproxy
+
+    installCertmanager: false
+
+    certmanager-issuer:
+      email: dummy@example.com
+
+    nginx-ingress:
+      enabled: false
+
+    ingress:
+      enabled: false
+    haproxy:
+      install: true
+    prometheus:
+      install: false
+
+    # Enable DIND for GitLab Runner
+    gitlab-runner:
+      install: false
