@@ -12,13 +12,13 @@ data:
       hosts:
         domain: example.com
 
-      # NKP already deploys certmanager
       ingress:
+        # NKP already deploys certmanager
         configureCertmanager: false
-
-      # Use HAProxy to make SSH access easier
-      ingress:
+        # Use HAProxy to make SSH access easier
         class: haproxy
+        # Toggle the TCP configurations and annotations to HAProxy.
+        provider: haproxy
 
     # NKP already deploys certmanager
     installCertmanager: false
