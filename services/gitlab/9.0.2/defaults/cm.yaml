@@ -39,8 +39,18 @@ data:
     prometheus:
       install: false
 
-    # Does not work with self-signed certificates,
-    # Has to be installed manually
     gitlab-runner:
       install: true
+      # Use the self-signed certifcate chain to register
       certsSecretName: gitlab-wildcard-tls-chain
+      # Needed for DIND
+      runners:
+        config: |
+          [[runners]]
+            [runners.kubernetes]
+              image = "ubuntu:24.04"
+              privileged = true
+            [[runners.kubernetes.volumes.empty_dir]]
+              name = "docker-certs"
+              mount_path = "/certs/client"
+              medium = "Memory"
