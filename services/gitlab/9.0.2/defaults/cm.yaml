@@ -8,31 +8,38 @@ data:
   values.yaml: |
     ---
     global:
+      # Needs customizing
       hosts:
-        domain: lab.markround.com
-      https: false
+        domain: example.com
+
+      # NKP already deploys certmanager
       ingress:
         configureCertmanager: false
-        tls:
-          enabled: false
+
+      # Use HAProxy to make SSH access easier
       ingress:
         class: haproxy
 
+    # NKP already deploys certmanager
     installCertmanager: false
 
+    # Complains if this is not set, even if we don't use it
     certmanager-issuer:
-      email: dummy@example.com
+      email: example@example.com
 
+    # Don't use the default nginx ingress controller
     nginx-ingress:
       enabled: false
 
-    ingress:
-      enabled: false
+    # Deploy HAProxy for ingress
     haproxy:
       install: true
+
+    # NKP already provides a Prometheus stack
     prometheus:
       install: false
 
-    # Enable DIND for GitLab Runner
+    # Does not work with self-signed certificates,
+    # Has to be installed manually
     gitlab-runner:
       install: false
