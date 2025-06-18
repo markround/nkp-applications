@@ -42,4 +42,5 @@ data:
     # Does not work with self-signed certificates,
     # Has to be installed manually
     gitlab-runner:
-      install: false
+      install: true
+      certsSecretName: gitlab-wildcard-tls-chain
