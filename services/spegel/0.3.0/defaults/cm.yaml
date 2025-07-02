@@ -1,9 +1,0 @@
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: spegel-0.3.0-mdr-defaults
-  namespace: ${releaseNamespace}
-data:
-  values.yaml: |
-    ---
