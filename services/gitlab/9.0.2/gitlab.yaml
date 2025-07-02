@@ -28,6 +28,9 @@ spec:
   install:
     remediation:
       retries: 30
+    timeout: 10m
+  upgrade:
+    timeout: 20m
   interval: 15s
   releaseName: gitlab
   targetNamespace: ${releaseNamespace}
