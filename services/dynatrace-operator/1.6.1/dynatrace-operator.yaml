@@ -18,13 +18,10 @@ metadata:
   name: dynatrace-operator
   namespace: ${releaseNamespace}
 spec:
-  chart:
-    spec:
-      chart: dynatrace-operator
-      sourceRef:
-        kind: OCIRepository
-        name: dynatrace-operator
-        namespace: ${workspaceNamespace}
+  chartRef:
+    kind: OCIRepository
+    name: dynatrace-operator
+    namespace: ${workspaceNamespace}
   install:
     remediation:
       retries: 30
