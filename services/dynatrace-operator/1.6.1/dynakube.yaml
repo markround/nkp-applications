@@ -1,0 +1,25 @@
+---
+apiVersion: dynatrace.com/v1beta3
+kind: DynaKube
+metadata:
+  name: dynakube
+  namespace: ${releaseNamespace}
+  annotations:
+    feature.dynatrace.com/k8s-app-enabled: "true"
+spec:
+  apiUrl: https://eax48420.live.dynatrace.com/api
+
+  metadataEnrichment:
+    enabled: true
+
+  activeGate:
+    capabilities:
+      - kubernetes-monitoring
+
+    resources:
+      requests:
+        cpu: 500m
+        memory: 512Mi
+      limits:
+        cpu: 1000m
+        memory: 1.5Gi
