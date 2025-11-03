@@ -11,6 +11,9 @@ data:
       params:
         # So we can use Traefik TLS termination
         server.insecure: true
+        # For ingress on a subpath
+        server.rootpath: /argocd
+        server.basehref: /argocd 
       # So applications have a health check and can therefore be included in sync waves
       # See https://argo-cd.readthedocs.io/en/stable/operator-manual/health/
       cm:
