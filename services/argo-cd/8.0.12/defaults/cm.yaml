@@ -32,6 +32,14 @@ data:
           return hs
         statusbadge.enabled: true  
 
+    # ingress
+    ingress:
+      enabled: true
+      ingressClassName: kommander-traefik
+      annotations:
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      path: /argocd
+
     # Metrics support
     controller:
       metrics:
