@@ -159,10 +159,10 @@ spec:
           resources:
             requests:
               cpu: "100m"
-              memory: "50Mi"
+              memory: "150Mi"
             limits:
               cpu: "100m"
-              memory: "50Mi"
+              memory: "150Mi"
           securityContext:
             privileged: true
           terminationMessagePolicy: FallbackToLogsOnError
