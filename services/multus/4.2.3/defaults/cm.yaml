@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: multus-4.2.3-mdr-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
