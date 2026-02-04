@@ -1,0 +1,39 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: ingress-nginx
+  namespace: ${workspaceNamespace}
+  labels:
+    kommander.d2iq.io/dkp-airgapped: unsupported
+spec:
+  url: "${helmMirrorURL:=https://kubernetes.github.io/ingress-nginx}"
+  interval: 10m
+  timeout: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: ingress-nginx
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx
+        namespace: ${workspaceNamespace}
+      version: 4.14.3
+  install:
+    remediation:
+      retries: 30
+  interval: 15s
+  releaseName: ingress-nginx
+  targetNamespace: ${releaseNamespace}
+  upgrade:
+    remediation:
+      retries: 30
+  valuesFrom:
+    - kind: ConfigMap
+      name: ingress-nginx-4.14.3-mdr-defaults
