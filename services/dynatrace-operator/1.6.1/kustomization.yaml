@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - dynatrace-operator.yaml
 - dynakube.yaml
+- cm.yaml
