@@ -12,7 +12,7 @@ spec:
         kind: GitRepository
         name: mdr-catalog-applications
         namespace: ${workspaceNamespace}
-      version: 0.3.0
+      version: 0.3.1
   install:
     remediation:
       retries: 30
@@ -24,4 +24,4 @@ spec:
       retries: 30
   valuesFrom:
     - kind: ConfigMap
-      name: acme-issuers-0.3.0-mdr-defaults
+      name: acme-issuers-0.3.1-mdr-defaults

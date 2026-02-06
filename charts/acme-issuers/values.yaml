@@ -1,6 +1,6 @@
 ---
 # Ingress class to use for solvers
-ingressClass: nginx
+ingressClass: kommander-traefik
 
 # Global email to use for every issuer listed. Can also be set per issuer.
 email: acme@example.com
